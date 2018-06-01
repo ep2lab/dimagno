@@ -1,4 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------
 %{
 This abstract class defines the basic interface for simulation fronts. 
 It keeps enough data from the last
@@ -8,7 +8,7 @@ front should be a surface/line out of the Mach cone of each of its points.
 
 MMM20130221
 %}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------
 classdef front < handle
     properties % Basic Properties (arrays) in the front (from axis (1) to wall (end))        
         z_
@@ -31,12 +31,12 @@ classdef front < handle
     properties (Dependent = true)
         M_ % calculated as sqrt(u_.^2+v_.^2)./c_
     end
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------
     properties 
         n_points; % number of points
         n_electrons; % number of electron species
     end
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+%----------------------------------------------------------------------    
     properties (Constant = true)
         basic_variable_names =  {'z','r','u','v','w','phi','c'};
         basic_electron_variable_names =  {'ne'};
@@ -49,7 +49,7 @@ classdef front < handle
         derived_electron_variable_names_ =  {'Te_','we_','etae_'};
         dependent_variable_names_ = {'M_'};
     end
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------
     methods
         function p = point(h,varargin)
             % Returns a structure with the selected point. Varargin is just the
@@ -317,5 +317,5 @@ classdef front < handle
             end            
         end
     end
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+%----------------------------------------------------------------------    
 end

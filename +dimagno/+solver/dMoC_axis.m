@@ -1,4 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %{
 Function to calculate variables at a new inner point using
 direct MOC (p1 and p2 are given; p3 is found and interpolated).
@@ -17,8 +16,6 @@ iter,iter_err: convergence information
 
 MMM20130310
 %}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 function [p4,iter,iter_err] = dMoC_axis(data,i1,i3,F)
 
 % abbrv

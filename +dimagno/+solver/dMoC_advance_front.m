@@ -1,12 +1,9 @@
-%----------------------------------------------------------------------
 %{
 
 This function receives a integration front_2d (Fold) and propagates it
 downstream once (Fnew).
 
-%}
-%----------------------------------------------------------------------
-
+%} 
 function [Fnew] = dMoC_advance_front(data,Fold)
   
 Fsub = dimagno.front;

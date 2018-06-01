@@ -3,6 +3,9 @@ This postprocessing function computes the plasma-induced magnetic field
 from the azimuthal currents in the plasma. It must be run after
 fronts_to_arrays. 
 
+Refactored code from previous version - still experimental and not
+tested.
+
 MMM20180522
 %}
 function solution = induced_field(data,solution)
