@@ -1,7 +1,7 @@
 DIMAGNO
 =======
 
-<!-- [![DOI](https://zenodo.org/badge/xx)](https://zenodo.org/badge/latestdoi/xx) -->
+[![DOI](https://zenodo.org/badge/134246471.svg)](https://zenodo.org/badge/latestdoi/134246471)
 
 ![DIMAGNO logo](/docs/logo.png)
 
@@ -94,7 +94,7 @@ by citing the main article of the Akiles2d model,
 
 and/or citing the code directly as:
 
-> Mario Merino (2018). DIMAGNO code: Divergent Magnetic Nozzle plasma flow integrator, [DOI: XX](https://doi.org/XX)
+> Mario Merino (2018). DIMAGNO code: Divergent Magnetic Nozzle plasma flow integrator, [DOI: 10.5281/zenodo.1257295](https://doi.org/10.5281/zenodo.1257295)
   
 ## License
 
