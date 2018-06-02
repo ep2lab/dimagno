@@ -88,7 +88,7 @@ development of this or any of my other codes, you can contact us through
 This program is the result of substantial effort. It is released as open
 source in the hope that it will be useful to other people. If you find it
 useful and/or use it in any of your works, I kindly ask you to acknowledge it
-by citing the main article of the Akiles2d model,
+by citing the main article of the DIMAGNO model,
 
 > Eduardo Ahedo, Mario Merino, "Two-dimensional supersonic plasma acceleration in a magnetic nozzle", Physics of Plasmas 17, 073501 (2010)  [DOI: 10.1063/1.3442736](https://doi.org/10.1063/1.3442736)
 
@@ -99,4 +99,4 @@ and/or citing the code directly as:
 ## License
 
 Copyright (c) 2018 Mario Merino. 
-The software is released as open source with the [MIT License](LICENSE.md).
+The software is released as open source under the [MIT License](LICENSE.md).
