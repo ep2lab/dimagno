@@ -4,7 +4,7 @@ with the simulation data.
 
 MMM20180522
 %}
-function solution = fronts_to_arrays(data,solution)
+% function solution = fronts_to_arrays(data,solution)
 
 frontfiles = dir(fullfile(data.dimagno.simdir,'fronts','*.mat'));
 

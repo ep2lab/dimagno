@@ -8,7 +8,7 @@ tested.
 
 MMM20180522
 %}
-function solution = induced_field(data,solution)
+% function solution = induced_field(data,solution)
    
 %% Create and prepare induced field object
 solution.induced = magnetic_field.library_2d; % Field object (library_2d)
@@ -25,6 +25,7 @@ y_points = data.postprocessor.postparameters.induced_field.ypoints;
 I = scatteredInterpolant(solution.z(:),solution.r(:),solution.jtheta(:));
 JTHETA = I(solution.induced.ZZ,solution.induced.RR);
 JTHETA(data.applied.field_2d(solution.induced.ZZ,solution.induced.RR) > data.applied.field_2d(data.initialfront.front.z_(end),data.initialfront.front.r_(end)) ) = 0; % set to 0 the jtheta of points outside of the plasma.
+JTHETA(solution.induced.ZZ<=0 & solution.induced.RR>1) = 0; % set to 0 the jtheta of points outside of the plasma.
 clear I; % delete interpolant 
  
 % Generate temporary loop_2d object
