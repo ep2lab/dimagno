@@ -163,10 +163,10 @@ classdef ic < handle & hgsetget
                 if h.plasma.electrons{i}.m == 0
                     library = h.De_{i}/h.plasma.electrons{i}.q;
                     if psi> max(library) % To extrapolate with constant values if need be.
-                        etae{i} = max(library);
+                        etae{i} = h.r_max;
                         continue; % cycle
                     elseif psi < min(library)                        
-                        etae{i} = min(library);
+                        etae{i} = 0;
                         continue;
                     end
                     etae{i} = interp1(library,h.r_,psi);
@@ -259,14 +259,13 @@ classdef ic < handle & hgsetget
             % eta must be scalar!
             t = h.r_max; % maximum value of r
             % Calculate eta in index space.
-            s = (h.n_r_-1)/t; % s is the  inverse of the step
-            eta = eta*s+1;            
-            % Linear interpolation method
-            s = floor(eta); % s is now the floor of eta % this is just an optimization                       
-            t = max(1,min(h.n_r_,s+1));  % limit them from 1...n_r_. This serves to EXTRAPOLATE directly
-            s = max(1,min(h.n_r_,s));  % limit them from 1...n_r_. This serves to EXTRAPOLATE directly            
-            eta = eta-s;                 % increment (saved on eta to save space)
-            Yi = Y(s).*(1-eta) + Y(t).*eta;
+            s = eta*(h.n_r_-1)/t + 1;  
+            % Linear interpolation method, extrapolating last value outside
+            s = min(h.n_r_,max(1,s));
+            s0 = floor(s);
+            s1 = ceil(s);
+            ds = s - s0; % excess or increment from s0
+            Yi = Y(s0).*(1-ds) + Y(s1).*ds;
         end        
         function [dHe_deta,dDe_deta,dWe_deta,We] = calculate_dHe_deta_dDe_deta_dWe_deta_We_2d(h,r,psi)
             % This function tries to save time by calculating all at the same
