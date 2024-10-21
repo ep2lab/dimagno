@@ -8,7 +8,7 @@ tested.
 
 MMM20180522
 %}
-% function solution = induced_field(data,solution)
+function solution = induced_field(data,solution)
    
 %% Create and prepare induced field object
 solution.induced = magnetic_field.library_2d; % Field object (library_2d)

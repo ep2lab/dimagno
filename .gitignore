@@ -102,3 +102,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Anything in the sims folder should not be tracked
+sims/
